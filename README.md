@@ -84,16 +84,21 @@ AirBooking/
 ### Option A: Run via Commands (Quick Start)
 
 #### 1. Start the Backend Server (Terminal 1)
-```powershell
-cd C:\Users\lekshmi\.gemini\antigravity\scratch\AirBooking\backend
-.\venv\Scripts\Activate.ps1
+```bash
+cd backend
+python -m venv venv
+# On Windows: .\venv\Scripts\activate | On macOS/Linux: source venv/bin/activate
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py seed_data
 python manage.py runserver 127.0.0.1:8000
 ```
 Backend API will be running at: `http://127.0.0.1:8000/`
 
 #### 2. Start the Frontend Server (Terminal 2)
-```powershell
-cd C:\Users\lekshmi\.gemini\antigravity\scratch\AirBooking\frontend
+```bash
+cd frontend
+npm install
 npm run dev
 ```
 Frontend Web App will be running at: `http://localhost:3000/`
